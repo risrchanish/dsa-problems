@@ -16,6 +16,17 @@
  
  * */
 
+/*  Thought on this approach(Brute force):
+ * While finding the prefixSum starting from 0th index in order to find 0 
+ * one of the previous left indices will be equal to the sum 
+ * because that particular index element will be extra from 0.
+ * So, I used two loops one is moving constantly towards end to find prefixSum
+ * while left starts from 0 till right-1 to match the elements. 
+ * If match found then return true else false.
+ * 
+ * Time complexity: Worst case o(n^2). 
+ * 
+*/
 
 package rohanloves0;
 
