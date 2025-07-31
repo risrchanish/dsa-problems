@@ -14,7 +14,9 @@ public class SecondLargestNumber {
 				secondLargest = largest;
 				largest = copy;
 			}
-			else if(secondLargest < copy) // only to check if previous secondLargest is lesser then update
+			// only to check if previous secondLargest is lesser then update
+			// Also, there should not be reated largest number 
+			else if(secondLargest < copy && copy != largest) 
 			{
 				secondLargest = copy;
 			}
