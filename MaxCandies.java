@@ -15,14 +15,38 @@ import java.util.List;
 Note that multiple kids can have the greatest number of candies.
  */
 
-//brute force approach 
-// Time complexity O(n^2)
 
 public class MaxCandies {
 	
 	public static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) 
 	{
-        
+		
+		// Optimized approach O(n)
+		
+		
+		int max = 0;
+		
+		for(int copied : candies)
+		{
+			if(max <= copied)
+			{
+				max = copied;
+			}
+		}
+		
+		List<Boolean> result = new ArrayList<>();
+		
+		for(int copied : candies)
+		{
+			result.add(copied + extraCandies >= max);
+		}
+		
+		return result;
+		
+		// brute force O(n^2)
+		
+        /*
+		
         int n = candies.length;
         List<Boolean> result = new ArrayList<>();
         for(int i = 0; i < n; i++)
@@ -53,6 +77,7 @@ public class MaxCandies {
         }
 
         return result;
+        */
 
     }
 	
